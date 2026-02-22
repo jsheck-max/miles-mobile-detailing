@@ -33,48 +33,55 @@
 
   <section class="booking-section">
     <div class="booking-layout">
-      <div class="booking-form" id="bookingForm">
+      <form action="https://formsubmit.co/judahsheck@outlook.com" method="POST" class="booking-form" id="bookingForm">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New MMD Booking Request">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://milesmobiledetail.com/booking.html?submitted=true">
+        <input type="text" name="_honey" style="display:none">
+
         <div class="form-step">
           <div class="step-header"><div class="step-number">1</div><h3>Your Information</h3></div>
           <div class="form-row">
-            <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="fname" placeholder="John Doe" required></div>
-            <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="fphone" placeholder="(989) 555-1234" required></div>
+            <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" name="Name" placeholder="John Doe" required></div>
+            <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" name="Phone" placeholder="(989) 555-1234" required></div>
           </div>
-          <div class="form-group"><label>Email Address</label><input type="email" id="femail" placeholder="john@example.com"></div>
-          <div class="form-group"><label>Service Address <span class="req">*</span></label><input type="text" id="faddress" placeholder="123 Main St, Bay City, MI" required></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="Email" placeholder="john@example.com"></div>
+          <div class="form-group"><label>Service Address <span class="req">*</span></label><input type="text" name="Address" placeholder="123 Main St, Bay City, MI" required></div>
         </div>
         <div class="form-step">
           <div class="step-header"><div class="step-number">2</div><h3>Vehicle &amp; Service</h3></div>
           <div class="form-row">
-            <div class="form-group"><label>Vehicle Info <span class="req">*</span></label><input type="text" id="fvehicle" placeholder="2022 Ford F-150" required></div>
+            <div class="form-group"><label>Vehicle Info <span class="req">*</span></label><input type="text" name="Vehicle" placeholder="2022 Ford F-150" required></div>
             <div class="form-group"><label>Vehicle Size <span class="req">*</span></label>
-              <select id="fsize" required><option value="" disabled selected>Select size</option><option value="sedan">Sedan / Coupe</option><option value="suv">SUV / Crossover</option><option value="truck">Truck / Large Vehicle</option></select>
+              <select name="Vehicle Size" required><option value="" disabled selected>Select size</option><option value="Sedan / Coupe">Sedan / Coupe</option><option value="SUV / Crossover">SUV / Crossover</option><option value="Truck / Large Vehicle">Truck / Large Vehicle</option></select>
             </div>
           </div>
           <div class="form-group"><label>Package <span class="req">*</span></label>
-            <select id="fpackage" required>
+            <select name="Package" required>
               <option value="" disabled selected>Choose a package</option>
-              <option value="exterior">Exterior Detail</option>
-              <option value="interior">Interior Detail</option>
-              <option value="full">Full Detail</option>
+              <option value="Exterior Detail">Exterior Detail</option>
+              <option value="Interior Detail">Interior Detail</option>
+              <option value="Full Detail">Full Detail</option>
             </select>
           </div>
           <div class="form-group"><label>Add-Ons</label>
-            <select id="faddons"><option value="" selected>None</option><option value="ceramic">Ceramic Coating (+$150)</option><option value="pethair">Pet Hair Removal (+$50)</option><option value="headlight">Headlight Restoration (+$60)</option><option value="engine">Engine Bay (+$75)</option></select>
+            <select name="Add-Ons"><option value="None" selected>None</option><option value="Ceramic Coating (+$150)">Ceramic Coating (+$150)</option><option value="Pet Hair Removal (+$50)">Pet Hair Removal (+$50)</option><option value="Headlight Restoration (+$60)">Headlight Restoration (+$60)</option><option value="Engine Bay (+$75)">Engine Bay (+$75)</option></select>
           </div>
         </div>
         <div class="form-step">
           <div class="step-header"><div class="step-number">3</div><h3>Schedule</h3></div>
           <div class="form-row">
-            <div class="form-group"><label>Preferred Date <span class="req">*</span></label><input type="date" id="fdate" required></div>
+            <div class="form-group"><label>Preferred Date <span class="req">*</span></label><input type="date" name="Preferred Date" required></div>
             <div class="form-group"><label>Preferred Time</label>
-              <select id="ftime"><option value="" disabled selected>Select time</option><option value="morning">Morning (8AM &#8211; 12PM)</option><option value="afternoon">Afternoon (12PM &#8211; 4PM)</option><option value="evening">Evening (4PM &#8211; 7PM)</option></select>
+              <select name="Preferred Time"><option value="" disabled selected>Select time</option><option value="Morning (8AM-12PM)">Morning (8AM &#8211; 12PM)</option><option value="Afternoon (12PM-4PM)">Afternoon (12PM &#8211; 4PM)</option><option value="Evening (4PM-7PM)">Evening (4PM &#8211; 7PM)</option></select>
             </div>
           </div>
-          <div class="form-group"><label>Additional Notes</label><textarea id="fnotes" placeholder="Anything we should know? Pet hair situation, stains, special requests..."></textarea></div>
+          <div class="form-group"><label>Additional Notes</label><textarea name="Notes" placeholder="Anything we should know? Pet hair situation, stains, special requests..."></textarea></div>
         </div>
-        <button type="button" class="submit-btn" onclick="submitBooking()">Submit Booking Request</button>
-      </div>
+        <button type="submit" class="submit-btn">Submit Booking Request</button>
+      </form>
 
       <div class="booking-sidebar">
         <div class="sidebar-card">
@@ -116,23 +123,10 @@
   </footer>
   <script src="js/main.js"></script>
   <script>
-  function submitBooking(){
-    const f=id=>document.getElementById(id);
-    const name=f('fname').value,phone=f('fphone').value,address=f('faddress').value,vehicle=f('fvehicle').value,size=f('fsize').value,pkg=f('fpackage').value,date=f('fdate').value;
-    if(!name||!phone||!address||!vehicle||!size||!pkg||!date){alert('Please fill in all required fields.');return}
-    const email=f('femail').value,addons=f('faddons').value,time=f('ftime').value,notes=f('fnotes').value;
-    const lines=[
-      `New MMD Booking Request`,``,
-      `Name: ${name}`,`Phone: ${phone}`,email?`Email: ${email}`:'',
-      `Address: ${address}`,`Vehicle: ${vehicle}`,`Size: ${size}`,
-      `Package: ${pkg}`,addons?`Add-on: ${addons}`:'',
-      `Date: ${date}`,time?`Time: ${time}`:'',notes?`Notes: ${notes}`:''
-    ].filter(Boolean).join('\n');
-    const body=encodeURIComponent(lines);
-    const subject=encodeURIComponent(`MMD Booking - ${name} - ${pkg} - ${date}`);
-    window.location.href=`mailto:judahsheck@outlook.com?subject=${subject}&body=${body}`;
-    setTimeout(()=>{alert('Your default email app should have opened with the booking details. If it didn\'t, please call us at (989) 778-7765 to book directly!')},1000);
-  }
-  </script>
+  // Check if form was submitted successfully
+    if(window.location.search.includes('submitted=true')){
+      document.getElementById('bookingForm').innerHTML = '<div style="text-align:center;padding:60px 20px"><h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2><p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We\'ll confirm your appointment within a few hours.</p><p style="color:#8b8fa3;margin-top:12px">Questions? Call us at <a href=\"tel:9897787765\" style=\"color:#6366f1\">(989) 778-7765</a></p></div>';
+    }
+    </script>
 </body>
 </html>
