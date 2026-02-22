@@ -3,36 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miles Mobile Detailing | Bay City, MI</title>
-  <meta name="description" content="Professional, reliable, and 100% mobile car detailing in Bay City and surrounding areas. We bring the shine to you.">
+  <title>Miles Mobile Detailing | Premium Mobile Car Detailing | Bay City, MI</title>
+  <meta name="description" content="Bay City's premier mobile car detailing service. Exterior, interior, and full detail packages. We come to you. Call (989) 778-7765.">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <a href="index.html" class="nav-logo"><span>MMD</span></a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="booking.html">Booking</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:+19895551234" class="nav-phone" title="Call us">📞</a>
+      <a href="tel:+19897787765" class="nav-phone">&#128222;</a>
       <a href="booking.html" class="btn btn-primary">Book Now</a>
-      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
-  <!-- MOBILE NAV -->
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
     <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
-    <a href="index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+    <a href="services.html" onclick="this.parentElement.classList.remove('open')">Services</a>
     <a href="gallery.html" onclick="this.parentElement.classList.remove('open')">Gallery</a>
     <a href="booking.html" onclick="this.parentElement.classList.remove('open')">Booking</a>
     <a href="booking.html" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')">Book Now</a>
@@ -42,13 +36,23 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-badge">Bay City & Surrounding Areas</div>
+      <div class="hero-badge">Bay City &amp; Surrounding Areas</div>
       <h1>Miles Mobile Detailing</h1>
-      <p>Professional, reliable, and 100% mobile — we bring the shine to you</p>
+      <p>Professional, reliable, and 100% mobile &#8212; we bring the shine to you. Premium hand wash, paint correction, ceramic coating, and full interior restoration at your door.</p>
       <div class="hero-buttons">
         <a href="booking.html" class="btn btn-primary">Book Your Detail</a>
-        <a href="index.html#services" class="btn btn-outline">View Services</a>
+        <a href="services.html" class="btn btn-outline">View Services &amp; Pricing</a>
       </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div class="fade-in"><div class="stat-number">500+</div><div class="stat-label">Cars Detailed</div></div>
+      <div class="fade-in"><div class="stat-number">5.0</div><div class="stat-label">Google Rating</div></div>
+      <div class="fade-in"><div class="stat-number">100%</div><div class="stat-label">Satisfaction Rate</div></div>
+      <div class="fade-in"><div class="stat-number">Same Day</div><div class="stat-label">Service Available</div></div>
     </div>
   </section>
 
@@ -60,25 +64,80 @@
     </div>
     <div class="services-grid">
       <div class="service-card fade-in">
-        <div class="service-icon">✨</div>
+        <div class="service-icon">&#10024;</div>
         <h3>Exterior Detail</h3>
-        <p>Premium hand wash, clay bar treatment, paint correction, and ceramic coating</p>
+        <p>Restore your vehicle's exterior to a mirror finish with professional-grade products and techniques.</p>
+        <ul class="service-includes">
+          <li>Premium hand wash &amp; dry</li>
+          <li>Clay bar decontamination</li>
+          <li>One-step paint correction</li>
+          <li>Tire &amp; wheel deep clean</li>
+          <li>Sealant or ceramic spray</li>
+        </ul>
         <span class="service-price">From $149</span>
-        <a href="booking.html" class="service-link">Book &rarr;</a>
+        <a href="services.html" class="service-link">Details &rarr;</a>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">🛡️</div>
+        <div class="service-icon">&#128737;</div>
         <h3>Interior Detail</h3>
-        <p>Deep vacuum, steam cleaning, leather conditioning, and odor elimination</p>
+        <p>Deep clean every surface inside your vehicle for that brand-new cabin feeling.</p>
+        <ul class="service-includes">
+          <li>Full vacuum &amp; extraction</li>
+          <li>Steam cleaning all surfaces</li>
+          <li>Leather conditioning</li>
+          <li>Dashboard &amp; console detail</li>
+          <li>Odor elimination treatment</li>
+        </ul>
         <span class="service-price">From $129</span>
-        <a href="booking.html" class="service-link">Book &rarr;</a>
+        <a href="services.html" class="service-link">Details &rarr;</a>
       </div>
       <div class="service-card fade-in">
-        <div class="service-icon">⭐</div>
+        <div class="service-icon">&#11088;</div>
         <h3>Full Detail</h3>
-        <p>Complete interior and exterior transformation for the ultimate shine</p>
+        <p>The complete transformation &#8212; interior and exterior done right for the ultimate showroom look.</p>
+        <ul class="service-includes">
+          <li>Everything in Exterior Detail</li>
+          <li>Everything in Interior Detail</li>
+          <li>Engine bay cleaning</li>
+          <li>Multi-step paint correction</li>
+          <li>6-month ceramic coating</li>
+        </ul>
         <span class="service-price">From $249</span>
-        <a href="booking.html" class="service-link">Book &rarr;</a>
+        <a href="services.html" class="service-link">Details &rarr;</a>
+      </div>
+    </div>
+    <p class="pricing-note">Prices vary by vehicle size. See full pricing on our <a href="services.html" style="color:var(--accent-l)">Services page</a>.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-header fade-in">
+      <h2>How It Works</h2>
+      <p>Getting your car detailed has never been easier</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step fade-in">
+        <div class="step-num">1</div>
+        <h3>Book Online</h3>
+        <p>Pick your service, choose a date and time that works for you, and submit your booking in under 2 minutes.</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">2</div>
+        <h3>We Confirm</h3>
+        <p>You'll get a confirmation call or text within a few hours to lock in your appointment and go over any details.</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">3</div>
+        <h3>We Show Up</h3>
+        <p>Our team arrives at your location with all the equipment and products needed &#8212; no prep required on your end.</p>
+        <span class="step-arrow">&rarr;</span>
+      </div>
+      <div class="step fade-in">
+        <div class="step-num">4</div>
+        <h3>You Drive Clean</h3>
+        <p>Walk out to a car that looks and smells brand new. We guarantee you'll love the results or we'll make it right.</p>
       </div>
     </div>
   </section>
@@ -90,81 +149,86 @@
       <p>Transformations that turn heads</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&q=80" alt="Car detailing - exterior wash" loading="lazy">
-      </div>
-      <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Luxury car detail" loading="lazy">
-      </div>
-      <div class="gallery-item fade-in">
-        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Sports car detailing" loading="lazy">
-      </div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&q=80" alt="Exterior hand wash" loading="lazy"><span class="gallery-label">Exterior Detail</span></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Luxury car finish" loading="lazy"><span class="gallery-label">Full Detail</span></div>
+      <div class="gallery-item fade-in"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Sports car detail" loading="lazy"><span class="gallery-label">Paint Correction</span></div>
     </div>
-    <div class="gallery-cta fade-in">
-      <a href="gallery.html" class="btn btn-outline">View Full Gallery &rarr;</a>
+    <div class="gallery-cta fade-in"><a href="gallery.html" class="btn btn-outline">View Full Gallery &rarr;</a></div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header fade-in">
+      <h2>What Our Customers Say</h2>
+      <p>Real results, real reviews</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Absolutely blown away by the results. My truck looked better than the day I bought it. The interior was spotless and the paint had a mirror finish. Will definitely be booking again."</p>
+        <div class="testimonial-author">Mike R.</div>
+        <div class="testimonial-vehicle">2022 Ford F-150</div>
+      </div>
+      <div class="testimonial fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"So convenient having them come to my office. I dropped my keys off in the morning and came out to a brand new looking car at lunch. The ceramic coating has kept it looking great for months."</p>
+        <div class="testimonial-author">Sarah T.</div>
+        <div class="testimonial-vehicle">2021 Honda CR-V</div>
+      </div>
+      <div class="testimonial fade-in">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Had pet hair embedded in every inch of my back seat. MMD got every last bit out and the car smells amazing. Professional, on time, and the price was very fair for the quality of work."</p>
+        <div class="testimonial-author">James D.</div>
+        <div class="testimonial-vehicle">2020 Chevy Equinox</div>
+      </div>
     </div>
   </section>
 
   <!-- WHY US -->
   <section class="why-us">
-    <div class="section-header fade-in">
-      <h2>Why Choose MMD</h2>
-      <p>Your ride deserves the best</p>
-    </div>
+    <div class="section-header fade-in"><h2>Why Choose MMD</h2><p>Your ride deserves the best</p></div>
     <div class="why-grid">
-      <div class="why-item fade-in">
-        <div class="why-icon">📍</div>
-        <h3>We Come to You</h3>
-        <p>100% mobile — home, office, or anywhere in our service area</p>
-      </div>
-      <div class="why-item fade-in">
-        <div class="why-icon">⚡</div>
-        <h3>Same-Day Available</h3>
-        <p>Flexible scheduling with same-day service when available</p>
-      </div>
-      <div class="why-item fade-in">
-        <div class="why-icon">🏆</div>
-        <h3>Premium Products</h3>
-        <p>Only professional-grade equipment and detailing products</p>
-      </div>
-      <div class="why-item fade-in">
-        <div class="why-icon">💯</div>
-        <h3>Satisfaction Guaranteed</h3>
-        <p>100% satisfaction guarantee on every detail we perform</p>
-      </div>
+      <div class="why-item fade-in"><div class="why-icon">&#128205;</div><h3>We Come to You</h3><p>Home, office, gym parking lot &#8212; wherever your car is, we'll be there with all our gear ready to go.</p></div>
+      <div class="why-item fade-in"><div class="why-icon">&#9889;</div><h3>Same-Day Booking</h3><p>Need it done today? We offer same-day appointments when available. Book by noon and we'll get you in.</p></div>
+      <div class="why-item fade-in"><div class="why-icon">&#127942;</div><h3>Pro-Grade Products</h3><p>We use only professional-grade compounds, ceramic coatings, and tools &#8212; the same stuff the high-end shops use.</p></div>
+      <div class="why-item fade-in"><div class="why-icon">&#128175;</div><h3>Satisfaction Guaranteed</h3><p>Not happy with the results? We'll come back and make it right, no questions asked. That's the MMD promise.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-header fade-in"><h2>Frequently Asked Questions</h2></div>
+    <div class="faq-list">
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does a detail take?</div><div class="faq-a">An exterior detail typically takes 1.5&#8211;2 hours, an interior detail about 1.5&#8211;2 hours, and a full detail runs 3&#8211;4 hours depending on vehicle size and condition. We'll give you a time estimate when we confirm your booking.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What do I need to provide?</div><div class="faq-a">Just your vehicle and access to a water spigot if possible. We bring all our own equipment, power, products, and supplies. If there's no water access, let us know when booking and we'll bring our own water tank.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What areas do you serve?</div><div class="faq-a">We serve Bay City and surrounding areas including Midland, Saginaw, Auburn, Pinconning, Standish, and anywhere within about 30 miles of Bay City. Travel fees may apply for locations further out.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do prices change based on vehicle size?</div><div class="faq-a">Yes &#8212; we have tiered pricing for sedans/coupes, SUVs/crossovers, and trucks/large vehicles. Check our Services page for the full breakdown by vehicle type.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I pay?</div><div class="faq-a">We accept cash, Venmo, Zelle, and all major credit cards. Payment is collected after the detail is complete and you're satisfied with the results.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if it rains on my appointment day?</div><div class="faq-a">We'll reach out to reschedule if the weather doesn't cooperate. Interior details can usually still be done in light rain since we're working inside the vehicle. We'll always communicate and find a time that works.</div></div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
     <h2>Ready for That Showroom Shine?</h2>
-    <p>Book your mobile detail today and see the MMD difference</p>
-    <a href="booking.html" class="btn">Book Now</a>
+    <p>Book your mobile detail today and see the MMD difference.</p>
+    <a href="booking.html" class="btn btn-white">Book Now</a>
+    <div class="cta-contact">
+      <a href="tel:+19897787765">&#128222; (989) 778-7765</a>
+      <a href="mailto:judahsheck@outlook.com">&#9993; judahsheck@outlook.com</a>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="nav-logo"><span>MMD</span></span>
-        <p>Professional mobile detailing serving Bay City and surrounding areas. We bring the shine to you.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="booking.html">Booking</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+19895551234">📞 (989) 555-1234</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#11787f777e517c787d74627c7e73787d7475746570787d787f763f727e7c">✉️ <span class="__cf_email__" data-cfemail="cda4a3aba28da0a4a1a8bea0a2afa4a1a8a9a8b9aca4a1a4a3aae3aea2a0">[email&#160;protected]</span></a></li>
-          <li>📍 Bay City, MI</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><span class="nav-logo"><span>MMD</span></span><p>Professional mobile detailing serving Bay City, Midland, Saginaw, and surrounding areas. We bring the shine to you.</p></div>
+      <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services &amp; Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
+      <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html">Exterior Detail</a></li><li><a href="services.html">Interior Detail</a></li><li><a href="services.html">Full Detail</a></li><li><a href="services.html">Ceramic Coating</a></li></ul></div>
+      <div class="footer-links"><h4>Contact</h4><ul><li><a href="tel:+19897787765">&#128222; (989) 778-7765</a></li><li><a href="mailto:judahsheck@outlook.com">&#9993; judahsheck@outlook.com</a></li><li>&#128205; Bay City, MI &amp; surrounding areas</li></ul></div>
     </div>
-    <div class="f
+    <div class="footer-bottom">&copy; 2025 Miles Mobile Detailing. All rights reserved.</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
