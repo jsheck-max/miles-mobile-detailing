@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Detail | Miles Mobile Detailing</title>
+  <meta name="description" content="Book your mobile detailing appointment. We come to you in Bay City and surrounding areas.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span>MMD</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html" class="active">Booking</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+19895551234" class="nav-phone" title="Call us">📞</a>
+      <a href="booking.html" class="btn btn-primary">Book Now</a>
+      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
+    <a href="index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+    <a href="gallery.html" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+    <a href="booking.html" onclick="this.parentElement.classList.remove('open')">Booking</a>
+  </div>
+
+  <!-- BOOKING -->
+  <section class="booking-section">
+    <div class="booking-layout">
+
+      <!-- FORM -->
+      <form class="booking-form" id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <!-- Step 1: Info -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <h3>Your Information</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name <span class="required">*</span></label>
+              <input type="text" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number <span class="required">*</span></label>
+              <input type="tel" name="phone" placeholder="(123) 456-7890" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="required">*</span></label>
+            <input type="email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Service Address</label>
+            <input type="text" name="address" placeholder="123 Main St, Bay City">
+          </div>
+          <div class="form-group">
+            <label>Vehicle Information</label>
+            <input type="text" name="vehicle" placeholder="2020 Honda Accord">
+          </div>
+        </div>
+
+        <!-- Step 2: Service -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <h3>Select Service</h3>
+          </div>
+          <div class="form-group">
+            <label>Package <span class="required">*</span></label>
+            <select name="package" required>
+              <option value="" disabled selected>Choose a package</option>
+              <option value="exterior">Exterior Detail — From $149</option>
+              <option value="interior">Interior Detail — From $129</option>
+              <option value="full">Full Detail — From $249</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step 3: Schedule -->
+        <div class="form-step">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <h3>Schedule</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date <span class="required">*</span></label>
+              <input type="date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Time</label>
+              <select name="time">
+                <option value="" disabled selected>Select time</option>
+                <option value="morning">Morning (8AM – 12PM)</option>
+                <option value="afternoon">Afternoon (12PM – 4PM)</option>
+                <option value="evening">Evening (4PM – 7PM)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea name="notes" placeholder="Any special requests or concerns?"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Book Your Detail</button>
+      </form>
+
+      <!-- SIDEBAR -->
+      <div class="booking-sidebar">
+        <div class="sidebar-card">
+          <h3>What to Expect</h3>
+          <ul class="expect-list">
+            <li><span class="check">✓</span> We come to your location</li>
+            <li><span class="check">✓</span> Confirmation within 24 hours</li>
+            <li><span class="check">✓</span> Same-day service available</li>
+            <li><span class="check">✓</span> Professional equipment</li>
+            <li><span class="check">✓</span> 100% satisfaction guarantee</li>
+          </ul>
+        </div>
+        <div class="sidebar-card service-area-card">
+          <h3>Service Area</h3>
+          <div class="area-location">📍 Bay City & Surrounding Areas</div>
+          <p>We bring premium mobile detailing directly to your home, office, or any location within our service area.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo"><span>MMD</span></span>
+        <p>Professional mobile detailing serving Bay City and surrounding areas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19895551234">📞 (989) 555-1234</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#c1a8afa7ae81aca8ada4b2acaea3a8ada4a5a4b5a0a8ada8afa6efa2aeac">✉️ <span class="__cf_email__" data-cfemail="fb92959d94bb9692979e8896949992979e9f9e8f9a929792959cd5989496">[email&#160;protected]</span></a></li>
+          <li>📍 Bay City, MI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Miles Mobile Detailing. All rights reserved.
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+  <script>
+    // Simple form handling
+    const form = document.getElementById('bookingForm');
+    form.addEventListener('submit', function(e) {
+      // If no Formspree ID is set, handle locally
+      if (form.action.includes('YOUR_FORM_ID')) {
+        e.preventDefault();
+        const data = new FormData(form);
+        let m
