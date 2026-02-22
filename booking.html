@@ -4,181 +4,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Your Detail | Miles Mobile Detailing</title>
-  <meta name="description" content="Book your mobile detailing appointment. We come to you in Bay City and surrounding areas.">
+  <meta name="description" content="Book your mobile car detail online. Pick your package, date, and location. We'll confirm within hours.">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
 </head>
 <body>
-
-  <!-- NAV -->
   <nav class="nav">
     <a href="index.html" class="nav-logo"><span>MMD</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="booking.html" class="active">Booking</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:+19895551234" class="nav-phone" title="Call us">📞</a>
+      <a href="tel:+19897787765" class="nav-phone">&#128222;</a>
       <a href="booking.html" class="btn btn-primary">Book Now</a>
-      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
   <div class="mobile-nav" id="mobileNav">
     <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
-    <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
-    <a href="index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
-    <a href="gallery.html" onclick="this.parentElement.classList.remove('open')">Gallery</a>
-    <a href="booking.html" onclick="this.parentElement.classList.remove('open')">Booking</a>
+    <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="booking.html">Booking</a>
   </div>
 
-  <!-- BOOKING -->
   <section class="booking-section">
     <div class="booking-layout">
-
-      <!-- FORM -->
-      <form class="booking-form" id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
-        <!-- Step 1: Info -->
+      <div class="booking-form" id="bookingForm">
         <div class="form-step">
-          <div class="step-header">
-            <div class="step-number">1</div>
-            <h3>Your Information</h3>
-          </div>
+          <div class="step-header"><div class="step-number">1</div><h3>Your Information</h3></div>
           <div class="form-row">
-            <div class="form-group">
-              <label>Full Name <span class="required">*</span></label>
-              <input type="text" name="name" placeholder="John Doe" required>
-            </div>
-            <div class="form-group">
-              <label>Phone Number <span class="required">*</span></label>
-              <input type="tel" name="phone" placeholder="(123) 456-7890" required>
-            </div>
+            <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" id="fname" placeholder="John Doe" required></div>
+            <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="fphone" placeholder="(989) 555-1234" required></div>
           </div>
-          <div class="form-group">
-            <label>Email Address <span class="required">*</span></label>
-            <input type="email" name="email" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label>Service Address</label>
-            <input type="text" name="address" placeholder="123 Main St, Bay City">
-          </div>
-          <div class="form-group">
-            <label>Vehicle Information</label>
-            <input type="text" name="vehicle" placeholder="2020 Honda Accord">
-          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="femail" placeholder="john@example.com"></div>
+          <div class="form-group"><label>Service Address <span class="req">*</span></label><input type="text" id="faddress" placeholder="123 Main St, Bay City, MI" required></div>
         </div>
-
-        <!-- Step 2: Service -->
         <div class="form-step">
-          <div class="step-header">
-            <div class="step-number">2</div>
-            <h3>Select Service</h3>
+          <div class="step-header"><div class="step-number">2</div><h3>Vehicle &amp; Service</h3></div>
+          <div class="form-row">
+            <div class="form-group"><label>Vehicle Info <span class="req">*</span></label><input type="text" id="fvehicle" placeholder="2022 Ford F-150" required></div>
+            <div class="form-group"><label>Vehicle Size <span class="req">*</span></label>
+              <select id="fsize" required><option value="" disabled selected>Select size</option><option value="sedan">Sedan / Coupe</option><option value="suv">SUV / Crossover</option><option value="truck">Truck / Large Vehicle</option></select>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Package <span class="required">*</span></label>
-            <select name="package" required>
+          <div class="form-group"><label>Package <span class="req">*</span></label>
+            <select id="fpackage" required>
               <option value="" disabled selected>Choose a package</option>
-              <option value="exterior">Exterior Detail — From $149</option>
-              <option value="interior">Interior Detail — From $129</option>
-              <option value="full">Full Detail — From $249</option>
+              <option value="exterior">Exterior Detail</option>
+              <option value="interior">Interior Detail</option>
+              <option value="full">Full Detail</option>
             </select>
           </div>
+          <div class="form-group"><label>Add-Ons</label>
+            <select id="faddons"><option value="" selected>None</option><option value="ceramic">Ceramic Coating (+$150)</option><option value="pethair">Pet Hair Removal (+$50)</option><option value="headlight">Headlight Restoration (+$60)</option><option value="engine">Engine Bay (+$75)</option></select>
+          </div>
         </div>
-
-        <!-- Step 3: Schedule -->
         <div class="form-step">
-          <div class="step-header">
-            <div class="step-number">3</div>
-            <h3>Schedule</h3>
-          </div>
+          <div class="step-header"><div class="step-number">3</div><h3>Schedule</h3></div>
           <div class="form-row">
-            <div class="form-group">
-              <label>Date <span class="required">*</span></label>
-              <input type="date" name="date" required>
-            </div>
-            <div class="form-group">
-              <label>Preferred Time</label>
-              <select name="time">
-                <option value="" disabled selected>Select time</option>
-                <option value="morning">Morning (8AM – 12PM)</option>
-                <option value="afternoon">Afternoon (12PM – 4PM)</option>
-                <option value="evening">Evening (4PM – 7PM)</option>
-              </select>
+            <div class="form-group"><label>Preferred Date <span class="req">*</span></label><input type="date" id="fdate" required></div>
+            <div class="form-group"><label>Preferred Time</label>
+              <select id="ftime"><option value="" disabled selected>Select time</option><option value="morning">Morning (8AM &#8211; 12PM)</option><option value="afternoon">Afternoon (12PM &#8211; 4PM)</option><option value="evening">Evening (4PM &#8211; 7PM)</option></select>
             </div>
           </div>
-          <div class="form-group">
-            <label>Additional Notes</label>
-            <textarea name="notes" placeholder="Any special requests or concerns?"></textarea>
-          </div>
+          <div class="form-group"><label>Additional Notes</label><textarea id="fnotes" placeholder="Anything we should know? Pet hair situation, stains, special requests..."></textarea></div>
         </div>
+        <button type="button" class="submit-btn" onclick="submitBooking()">Submit Booking Request</button>
+      </div>
 
-        <button type="submit" class="submit-btn">Book Your Detail</button>
-      </form>
-
-      <!-- SIDEBAR -->
       <div class="booking-sidebar">
         <div class="sidebar-card">
           <h3>What to Expect</h3>
           <ul class="expect-list">
-            <li><span class="check">✓</span> We come to your location</li>
-            <li><span class="check">✓</span> Confirmation within 24 hours</li>
-            <li><span class="check">✓</span> Same-day service available</li>
-            <li><span class="check">✓</span> Professional equipment</li>
-            <li><span class="check">✓</span> 100% satisfaction guarantee</li>
+            <li><span class="check">&#10003;</span> We come to your location</li>
+            <li><span class="check">&#10003;</span> Confirmation within a few hours</li>
+            <li><span class="check">&#10003;</span> Same-day service when available</li>
+            <li><span class="check">&#10003;</span> All equipment provided</li>
+            <li><span class="check">&#10003;</span> Pay after &#8212; cash, Venmo, Zelle, card</li>
+            <li><span class="check">&#10003;</span> 100% satisfaction guarantee</li>
           </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Quick Pricing</h3>
+          <ul class="expect-list">
+            <li><span class="check">&#10024;</span> Exterior: $149 &#8211; $199</li>
+            <li><span class="check">&#128737;</span> Interior: $129 &#8211; $179</li>
+            <li><span class="check">&#11088;</span> Full Detail: $249 &#8211; $349</li>
+          </ul>
+          <p style="color:var(--muted);font-size:.8rem;margin-top:1rem">Based on vehicle size. <a href="services.html" style="color:var(--accent-l)">Full pricing &rarr;</a></p>
         </div>
         <div class="sidebar-card service-area-card">
           <h3>Service Area</h3>
-          <div class="area-location">📍 Bay City & Surrounding Areas</div>
-          <p>We bring premium mobile detailing directly to your home, office, or any location within our service area.</p>
+          <div class="area-loc">&#128205; Bay City &amp; 30-Mile Radius</div>
+          <p>Bay City, Midland, Saginaw, Auburn, Pinconning, Standish, and more. Travel fees may apply outside 30 miles.</p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="nav-logo"><span>MMD</span></span>
-        <p>Professional mobile detailing serving Bay City and surrounding areas.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="booking.html">Booking</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+19895551234">📞 (989) 555-1234</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#c1a8afa7ae81aca8ada4b2acaea3a8ada4a5a4b5a0a8ada8afa6efa2aeac">✉️ <span class="__cf_email__" data-cfemail="fb92959d94bb9692979e8896949992979e9f9e8f9a929792959cd5989496">[email&#160;protected]</span></a></li>
-          <li>📍 Bay City, MI</li>
-        </ul>
-      </div>
+      <div class="footer-brand"><span class="nav-logo"><span>MMD</span></span><p>Professional mobile detailing serving Bay City and surrounding areas.</p></div>
+      <div class="footer-links"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
+      <div class="footer-links"><h4>Contact</h4><ul><li><a href="tel:+19897787765">&#128222; (989) 778-7765</a></li><li><a href="mailto:judahsheck@outlook.com">&#9993; judahsheck@outlook.com</a></li><li>&#128205; Bay City, MI</li></ul></div>
     </div>
-    <div class="footer-bottom">
-      &copy; 2025 Miles Mobile Detailing. All rights reserved.
-    </div>
+    <div class="footer-bottom">&copy; 2025 Miles Mobile Detailing. All rights reserved.</div>
   </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    // Simple form handling
-    const form = document.getElementById('bookingForm');
-    form.addEventListener('submit', function(e) {
-      // If no Formspree ID is set, handle locally
-      if (form.action.includes('YOUR_FORM_ID')) {
-        e.preventDefault();
-        const data = new FormData(form);
-        let m
+  function submitBooking(){
+    const f=id=>document.getElementById(id);
+    const name=f('fname').value,phone=f('fphone').value,address=f('faddress').value,vehicle=f('fvehicle').value,size=f('fsize').value,pkg=f('fpackage').value,date=f('fdate').value;
+    if(!name||!phone||!address||!vehicle||!size||!pkg||!date){alert('Please fill in all required fields.');return}
+    const email=f('femail').value,addons=f('faddons').value,time=f('ftime').value,notes=f('fnotes').value;
+    const lines=[
+      `New MMD Booking Request`,``,
+      `Name: ${name}`,`Phone: ${phone}`,email?`Email: ${email}`:'',
+      `Address: ${address}`,`Vehicle: ${vehicle}`,`Size: ${size}`,
+      `Package: ${pkg}`,addons?`Add-on: ${addons}`:'',
+      `Date: ${date}`,time?`Time: ${time}`:'',notes?`Notes: ${notes}`:''
+    ].filter(Boolean).join('\n');
+    const body=encodeURIComponent(lines);
+    const subject=encodeURIComponent(`MMD Booking - ${name} - ${pkg} - ${date}`);
+    window.location.href=`mailto:judahsheck@outlook.com?subject=${subject}&body=${body}`;
+    setTimeout(()=>{alert('Your default email app should have opened with the booking details. If it didn\'t, please call us at (989) 778-7765 to book directly!')},1000);
+  }
+  </script>
+</body>
+</html>
