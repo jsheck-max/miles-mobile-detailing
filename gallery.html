@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Miles Mobile Detailing</title>
+  <meta name="description" content="See our work — transformations that showcase our commitment to excellence.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span>MMD</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+19895551234" class="nav-phone" title="Call us">📞</a>
+      <a href="booking.html" class="btn btn-primary">Book Now</a>
+      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
+    <a href="index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+    <a href="gallery.html" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+    <a href="booking.html" onclick="this.parentElement.classList.remove('open')">Booking</a>
+    <a href="booking.html" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')">Book Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Our Work</h1>
+    <p>Transformations that showcase our commitment to excellence</p>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="gallery-page-section">
+    <div class="gallery-filters">
+      <span>Filter by Service:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="exterior">Exterior</button>
+      <button class="filter-btn" data-filter="interior">Interior</button>
+      <button class="filter-btn" data-filter="full">Full Detail</button>
+    </div>
+    <div class="gallery-count" id="galleryCount">Showing 12 of 12 images</div>
+    <div class="gallery-full-grid" id="galleryGrid">
+
+      <div class="gallery-item" data-category="exterior">
+        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&q=80" alt="Exterior hand wash" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Luxury car exterior" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="full">
+        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Full detail sports car" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=600&q=80" alt="Dark car exterior shine" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="interior">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Interior leather detail" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="full">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80" alt="Full detail corvette" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=600&q=80" alt="Exterior paint correction" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="interior">
+        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&q=80" alt="Interior steam clean" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="full">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Full detail luxury sedan" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="exterior">
+        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Exterior ceramic coating" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="interior">
+        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&q=80" alt="Interior vacuum detail" loading="lazy">
+      </div>
+      <div class="gallery-item" data-category="full">
+        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&q=80" alt="Full detail BMW" loading="lazy">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Like What You See?</h2>
+    <p>Your car could be next — book your detail today</p>
+    <a href="booking.html" class="btn">Book Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo"><span>MMD</span></span>
+        <p>Professional mobile detailing serving Bay City and surrounding areas.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19895551234">📞 (989) 555-1234</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#472e292128072a2e2b22342a28252e2b22232233262e2b2e29206924282a">✉️ <span class="__cf_email__" data-cfemail="6f060109002f0206030a1c02000d06030a0b0a1b0e0603060108410c0002">[email&#160;protected]</span></a></li>
+          <li>📍 Bay City, MI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Miles Mobile Detailing. All rights reserved.
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+  <script>
+    // Gallery filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-full-grid .gallery-item');
+    const galleryCount = document.getElementById('galleryCount');
+    const total = galleryItems.length;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visible = 0;
+
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+    
