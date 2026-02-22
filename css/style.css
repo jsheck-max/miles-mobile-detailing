@@ -5,6 +5,8 @@
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04);transition:background 0.3s}
 .nav-logo{font-family:var(--display);font-size:1.5rem;font-weight:700;font-style:italic;color:var(--white);letter-spacing:1px}.nav-logo span{color:var(--accent-l)}
+.nav-logo img{height:40px;width:auto;display:block}
+
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}.nav-links a{font-size:.95rem;color:var(--text2);transition:color .2s;letter-spacing:.3px}.nav-links a:hover,.nav-links a.active{color:var(--accent-l)}
 .nav-right{display:flex;align-items:center;gap:1.25rem}.nav-phone{color:var(--text2);transition:color .2s}.nav-phone:hover{color:var(--accent-l)}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:.65rem 1.5rem;border-radius:50px;font-family:var(--body);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .3s;border:none;letter-spacing:.3px}
