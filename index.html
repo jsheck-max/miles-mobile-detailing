@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miles Mobile Detailing | Bay City, MI</title>
+  <meta name="description" content="Professional, reliable, and 100% mobile car detailing in Bay City and surrounding areas. We bring the shine to you.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span>MMD</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+19895551234" class="nav-phone" title="Call us">📞</a>
+      <a href="booking.html" class="btn btn-primary">Book Now</a>
+      <button class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html" onclick="this.parentElement.classList.remove('open')">Home</a>
+    <a href="index.html#services" onclick="this.parentElement.classList.remove('open')">Services</a>
+    <a href="gallery.html" onclick="this.parentElement.classList.remove('open')">Gallery</a>
+    <a href="booking.html" onclick="this.parentElement.classList.remove('open')">Booking</a>
+    <a href="booking.html" class="btn btn-primary" onclick="this.parentElement.classList.remove('open')">Book Now</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Bay City & Surrounding Areas</div>
+      <h1>Miles Mobile Detailing</h1>
+      <p>Professional, reliable, and 100% mobile — we bring the shine to you</p>
+      <div class="hero-buttons">
+        <a href="booking.html" class="btn btn-primary">Book Your Detail</a>
+        <a href="index.html#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-header fade-in">
+      <h2>Premium Detailing Services</h2>
+      <p>From deep cleans to paint protection, we make your ride look brand new</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">✨</div>
+        <h3>Exterior Detail</h3>
+        <p>Premium hand wash, clay bar treatment, paint correction, and ceramic coating</p>
+        <span class="service-price">From $149</span>
+        <a href="booking.html" class="service-link">Book &rarr;</a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🛡️</div>
+        <h3>Interior Detail</h3>
+        <p>Deep vacuum, steam cleaning, leather conditioning, and odor elimination</p>
+        <span class="service-price">From $129</span>
+        <a href="booking.html" class="service-link">Book &rarr;</a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">⭐</div>
+        <h3>Full Detail</h3>
+        <p>Complete interior and exterior transformation for the ultimate shine</p>
+        <span class="service-price">From $249</span>
+        <a href="booking.html" class="service-link">Book &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="gallery-preview">
+    <div class="section-header fade-in">
+      <h2>Our Work Speaks</h2>
+      <p>Transformations that turn heads</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&q=80" alt="Car detailing - exterior wash" loading="lazy">
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80" alt="Luxury car detail" loading="lazy">
+      </div>
+      <div class="gallery-item fade-in">
+        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&q=80" alt="Sports car detailing" loading="lazy">
+      </div>
+    </div>
+    <div class="gallery-cta fade-in">
+      <a href="gallery.html" class="btn btn-outline">View Full Gallery &rarr;</a>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us">
+    <div class="section-header fade-in">
+      <h2>Why Choose MMD</h2>
+      <p>Your ride deserves the best</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item fade-in">
+        <div class="why-icon">📍</div>
+        <h3>We Come to You</h3>
+        <p>100% mobile — home, office, or anywhere in our service area</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-icon">⚡</div>
+        <h3>Same-Day Available</h3>
+        <p>Flexible scheduling with same-day service when available</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-icon">🏆</div>
+        <h3>Premium Products</h3>
+        <p>Only professional-grade equipment and detailing products</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-icon">💯</div>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>100% satisfaction guarantee on every detail we perform</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready for That Showroom Shine?</h2>
+    <p>Book your mobile detail today and see the MMD difference</p>
+    <a href="booking.html" class="btn">Book Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="nav-logo"><span>MMD</span></span>
+        <p>Professional mobile detailing serving Bay City and surrounding areas. We bring the shine to you.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19895551234">📞 (989) 555-1234</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#11787f777e517c787d74627c7e73787d7475746570787d787f763f727e7c">✉️ <span class="__cf_email__" data-cfemail="cda4a3aba28da0a4a1a8bea0a2afa4a1a8a9a8b9aca4a1a4a3aae3aea2a0">[email&#160;protected]</span></a></li>
+          <li>📍 Bay City, MI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f
