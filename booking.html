@@ -33,7 +33,7 @@
 
   <section class="booking-section">
     <div class="booking-layout">
-      <form id="bookingForm" onsubmit="handleSubmit(event)" class="booking-form" id="bookingForm">
+      <form class="booking-form" id="bookingForm">
         
         
         
@@ -125,44 +125,36 @@
   </footer>
   <script src="js/main.js"></script>
   <script>
-  async function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      
-      const data = new FormData(form);
-      data.append('_subject', 'New MMD Booking Request');
-      data.append('_cc', 'alexnixonmmd@gmail.com,alexnixon1228@gmail.com,milesethan2020@gmail.com');
-      data.append('_template', 'table');
-      data.append('_captcha', 'false');
-      
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/judahsheck@outlook.com', {
-          method: 'POST',
-          body: data
-        });
-        const json = await res.json();
-        if (json.success) {
-          form.innerHTML = '<div style="text-align:center;padding:60px 20px"><h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2><p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We\'ll confirm your appointment within a few hours.</p><p style="color:#8b8fa3;margin-top:12px">Questions? Call us at <a href=\"tel:9897787765\" style=\"color:#6366f1\">(989) 778-7765</a></p></div>';
-        } else {
-          throw new Error('Send failed');
-        }
-      } catch(err) {
-        // Fallback: open SMS/text instead
-        const name = data.get('Name');
-        const phone = data.get('Phone');
-        const vehicle = data.get('Vehicle');
-        const pkg = data.get('Package');
-        const date = data.get('Preferred Date');
-        const msg = `New MMD Booking:\nName: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}\nPackage: ${pkg}\nDate: ${date}`;
-        btn.textContent = 'Submit Booking Request';
-        btn.disabled = false;
-        alert('Booking submitted! If you don\'t hear from us within a few hours, call (989) 778-7765');
-        window.location.href = `sms:9897787765?body=${encodeURIComponent(msg)}`;
+  document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    
+    const data = new FormData(form);
+    data.append('_subject', 'New MMD Booking Request');
+    data.append('_cc', 'alexnixonmmd@gmail.com,alexnixon1228@gmail.com,milesethan2020@gmail.com');
+    data.append('_template', 'table');
+    data.append('_captcha', 'false');
+    
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/judahsheck@outlook.com', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.innerHTML = '<div style="text-align:center;padding:60px 20px"><h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2><p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We will confirm your appointment within a few hours.</p><p style="color:#8b8fa3;margin-top:12px">Questions? Call us at <a href="tel:9897787765" style="color:#6366f1">(989) 778-7765</a></p></div>';
+      } else {
+        throw new Error('fail');
       }
+    } catch(err) {
+      btn.textContent = 'Submit Booking Request';
+      btn.disabled = false;
+      alert('There was an issue submitting. Please call us at (989) 778-7765 or text us to book!');
     }
-    </script>
+  });
+  </script>
 </body>
 </html>
