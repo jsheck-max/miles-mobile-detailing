@@ -129,67 +129,31 @@
     e.preventDefault();
     const form = this;
     const btn = form.querySelector('button[type="submit"]');
-    const origText = btn.textContent;
     btn.textContent = 'Sending...';
     btn.disabled = true;
     
-    // Collect form data
     const fd = new FormData(form);
     const info = {};
     fd.forEach((v,k) => { info[k] = v; });
     
-    let sent = false;
-    
-    // Try Google Apps Script endpoint
-    if (window.APPS_SCRIPT_URL) {
-      try {
-        await fetch(window.APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(info)
-        });
-        sent = true;
-      } catch(e) {}
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbyTH5gwq2iQAZEc1UikD00AtO-rBBKnZTQVyvOwzrwFT6Rej_cep5Eoj7eiKqVT8_AweQ/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(info)
+      });
+      
+      form.innerHTML = '<div style="text-align:center;padding:60px 20px">' +
+        '<h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2>' +
+        '<p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We will confirm your appointment within a few hours.</p>' +
+        '<p style="color:#8b8fa3;margin-top:12px">Questions? Call or text us at <a href="tel:9897787765" style="color:#6366f1">(989) 778-7765</a></p>' +
+        '</div>';
+    } catch(err) {
+      btn.textContent = 'Submit Booking Request';
+      btn.disabled = false;
+      alert('There was an issue submitting. Please call us at (989) 778-7765 to book!');
     }
-    
-    // Try FormSubmit AJAX as backup
-    if (!sent) {
-      try {
-        fd.append('_subject', 'New MMD Booking Request');
-        fd.append('_cc', 'alexnixonmmd@gmail.com,alexnixon1228@gmail.com,milesethan2020@gmail.com');
-        fd.append('_template', 'table');
-        fd.append('_captcha', 'false');
-        const res = await fetch('https://formsubmit.co/ajax/judahsheck@outlook.com', {
-          method: 'POST', body: fd
-        });
-        const json = await res.json();
-        if (json.success) sent = true;
-      } catch(e) {}
-    }
-    
-    // Always show success - the SMS fallback ensures you get the info
-    form.innerHTML = '<div style="text-align:center;padding:60px 20px">' +
-      '<h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2>' +
-      '<p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We will confirm your appointment within a few hours.</p>' +
-      '<p style="color:#8b8fa3;margin-top:12px">Questions? Call or text us at <a href="tel:9897787765" style="color:#6366f1">(989) 778-7765</a></p>' +
-      '</div>';
-    
-    // Also send details via SMS as guaranteed backup
-    const msg = "New MMD Booking:%0A" +
-      "Name: " + (info.Name||'') + "%0A" +
-      "Phone: " + (info.Phone||'') + "%0A" +
-      "Address: " + (info.Address||'') + "%0A" +
-      "Vehicle: " + (info.Vehicle||'') + "%0A" +
-      "Size: " + (info['Vehicle Size']||'') + "%0A" +
-      "Package: " + (info.Package||'') + "%0A" +
-      "Add-Ons: " + (info['Add-Ons']||'None') + "%0A" +
-      "Date: " + (info['Preferred Date']||'') + "%0A" +
-      "Time: " + (info['Preferred Time']||'') + "%0A" +
-      "Notes: " + (info.Notes||'None');
-    
-    // Silent notification - create hidden iframe with SMS
-    // This won't interrupt the user but will queue a text
   });
   </script>
 </body>
