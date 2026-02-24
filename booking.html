@@ -132,23 +132,27 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
     
-    const fd = new FormData(form);
-    const info = {};
-    fd.forEach((v,k) => { info[k] = v; });
+    const data = new FormData(form);
+    data.append('_subject', 'New MMD Booking Request');
+    data.append('_cc', 'judahsheck@outlook.com,alexnixon1228@gmail.com,milesethan2020@gmail.com');
+    data.append('_template', 'table');
+    data.append('_captcha', 'false');
     
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyTH5gwq2iQAZEc1UikD00AtO-rBBKnZTQVyvOwzrwFT6Rej_cep5Eoj7eiKqVT8_AweQ/exec', {
+      const res = await fetch('https://formsubmit.co/ajax/alexnixonmmd@gmail.com', {
         method: 'POST',
-        mode: 'no-cors',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(info)
+        body: data
       });
-      
-      form.innerHTML = '<div style="text-align:center;padding:60px 20px">' +
-        '<h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2>' +
-        '<p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We will confirm your appointment within a few hours.</p>' +
-        '<p style="color:#8b8fa3;margin-top:12px">Questions? Call or text us at <a href="tel:9897787765" style="color:#6366f1">(989) 778-7765</a></p>' +
-        '</div>';
+      const json = await res.json();
+      if (json.success) {
+        form.innerHTML = '<div style="text-align:center;padding:60px 20px">' +
+          '<h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2>' +
+          '<p style="color:#8b8fa3;font-size:1.1rem">Thanks for reaching out! We will confirm your appointment within a few hours.</p>' +
+          '<p style="color:#8b8fa3;margin-top:12px">Questions? Call or text us at <a href="tel:9897787765" style="color:#6366f1">(989) 778-7765</a></p>' +
+          '</div>';
+      } else {
+        throw new Error('fail');
+      }
     } catch(err) {
       btn.textContent = 'Submit Booking Request';
       btn.disabled = false;
