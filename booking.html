@@ -34,15 +34,6 @@
   <section class="booking-section">
     <div class="booking-layout">
       <form class="booking-form" id="bookingForm">
-        
-        
-        
-        
-        
-        
-        
-
-        
         <div class="form-step">
           <div class="step-header"><div class="step-number">1</div><h3>Your Information</h3></div>
           <div class="form-row">
@@ -125,25 +116,67 @@
   </footer>
   <script src="js/main.js"></script>
   <script>
+  // === MMD Tracker Integration ===
+  var TRACKER_URL = 'https://firestore.googleapis.com/v1/projects/mmd-tracker-v2/databases/(default)/documents';
+  var TRACKER_KEY = 'AIzaSyBqWC_2wwvPRXb3o-AsXY1wWSBHiCIUz8A';
+
+  function sendToTracker(formData) {
+    var now = new Date();
+    var dateVal = formData.get('Preferred Date');
+    var d = dateVal ? new Date(dateVal + 'T00:00:00') : now;
+    var dateStr = String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0') + '/' + d.getFullYear();
+    var sizeMap = {'Sedan / Coupe':'Sedan','SUV / Crossover':'SUV','Truck / Large Vehicle':'Pick-Up'};
+    var body = {
+      fields: {
+        name: {stringValue: formData.get('Name') || ''},
+        phone: {stringValue: formData.get('Phone') || ''},
+        address: {stringValue: formData.get('Address') || ''},
+        service: {stringValue: formData.get('Package') || ''},
+        body: {stringValue: sizeMap[formData.get('Vehicle Size')] || formData.get('Vehicle Size') || ''},
+        date: {stringValue: dateStr},
+        notes: {stringValue: (formData.get('Notes') || '') + (formData.get('Add-Ons') && formData.get('Add-Ons') !== 'None' ? ' | Add-on: ' + formData.get('Add-Ons') : '')},
+        vehicle: {stringValue: formData.get('Vehicle') || ''},
+        email: {stringValue: formData.get('Email') || ''},
+        employees: {stringValue: ''},
+        price: {doubleValue: 0},
+        mileage: {doubleValue: 0},
+        source: {stringValue: 'website'},
+        createdAt: {timestampValue: now.toISOString()}
+      }
+    };
+    // Fire and forget — don't block the email flow
+    fetch(TRACKER_URL + '/bookings?key=' + TRACKER_KEY, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    }).catch(function() {});
+  }
+
+  // === Booking Form Submit (email + tracker) ===
   document.getElementById('bookingForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = this;
-    const btn = form.querySelector('button[type="submit"]');
+    var form = this;
+    var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    
-    const data = new FormData(form);
+
+    var data = new FormData(form);
+
+    // Send to tracker (non-blocking)
+    sendToTracker(data);
+
+    // Send email via FormSubmit (existing flow)
     data.append('_subject', 'New MMD Booking Request');
     data.append('_cc', 'judahsheck@outlook.com,alexnixon1228@gmail.com,milesethan2020@gmail.com');
     data.append('_template', 'table');
     data.append('_captcha', 'false');
-    
+
     try {
-      const res = await fetch('https://formsubmit.co/ajax/alexnixonmmd@gmail.com', {
+      var res = await fetch('https://formsubmit.co/ajax/alexnixonmmd@gmail.com', {
         method: 'POST',
         body: data
       });
-      const json = await res.json();
+      var json = await res.json();
       if (json.success) {
         form.innerHTML = '<div style="text-align:center;padding:60px 20px">' +
           '<h2 style="color:#6366f1;margin-bottom:16px">Booking Request Sent!</h2>' +
